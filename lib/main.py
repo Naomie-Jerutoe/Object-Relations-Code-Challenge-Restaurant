@@ -9,35 +9,40 @@ def main():
     # Customer.create_table()
     # Restaurant.create_table()
     # Review.create_table()
-  
-    # # Create instances of Customer and Restaurant
+
+    # Create instances of Customer and Restaurant
     # customer1 = Customer.create("Naomie", "Lagat")
     # customer2 = Customer.create("Collins", "Bett")
     # customer3 = Customer.create("John", "Jing")
     # customer4 = Customer.create("Joy", "Jeng")
     # customer5 = Customer.create("Bella", "Blonde")
-  
+    # customer6 = Customer.create("Tenda", "Wema")
+
     # sarova = Restaurant.create("Sarova", 15000)
     # jamia = Restaurant.create("Jamia", 14150)
     # highland = Restaurant.create("Highland", 14300)
     # diamond = Restaurant.create("Diamond", 25502)
-  
+
     # # Get IDs of the created customers and restaurants
     # customer1_id = customer1.id
     # customer2_id = customer2.id
     # customer3_id = customer3.id
     # customer4_id = customer4.id
     # customer5_id = customer5.id
+    # customer6_id = customer6.id
     
     # sarova_id = sarova.id
     # jamia_id = jamia.id
     # highland_id = highland.id
     # diamond_id = diamond.id
-  
+    
     # # Create instances of Review using the IDs of associated customers and restaurants
     # Review.create(4, customer1_id, jamia_id)
     # Review.create(3, customer2_id, sarova_id)
     # Review.create(5, customer3_id, highland_id)
+    # Review.create(4, customer6_id, 3)
+    # Review.create(2, 4, 1)
+    
     
     # instance1 = Review.create(4, customer4_id, sarova_id)
     # restaurant_instance = instance1.review_restaurant()
@@ -73,7 +78,18 @@ def main():
     # else:
     #     print("Review not found.")
         
-    restaurant = Restaurant.find_by_id(2)
+    restaurant = Restaurant.find_by_id(3)
+    # if restaurant:
+    #     rest_reviews = restaurant.restaurant_reviews()
+    #     if rest_reviews:
+    #         for review in rest_reviews:
+    #             print(review)
+    #     else:
+    #         print("No review")
+    # else:
+    #     print("No Restaurant")
+    
+    
     if restaurant:
         formatted_reviews = restaurant.restaurant_all_reviews()
         
