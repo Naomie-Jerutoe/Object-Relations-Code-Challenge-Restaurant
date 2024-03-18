@@ -85,7 +85,7 @@ class Restaurant:
     sql = """
             SELECT *
             FROM reviews
-            WHERE id = ?
+            WHERE restaurant_id = ?
     """
     rows = CURSOR.execute(sql, (self.id,)).fetchall()
     reviews = [Review.instance_from_db(row) for row in rows]
