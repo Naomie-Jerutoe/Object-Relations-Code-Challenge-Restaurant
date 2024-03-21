@@ -7,6 +7,9 @@ class Restaurant:
     self.id = id
     self.name = name
     self.price = price
+    
+  def __repr__(self):
+    return f"Restaurant(id={self.id}, name='{self.name}', price={self.price})"
   
   @property
   def name(self):

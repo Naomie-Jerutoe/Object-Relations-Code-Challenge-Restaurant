@@ -12,6 +12,10 @@ class Review:
     self.customer_id = customer_id
     self.restaurant_id = restaurant_id
     
+  def __repr__(self):
+        return f"Review(id={self.id}, star_rating={self.star_rating}, customer_id={self.customer_id}, restaurant_id={self.restaurant_id})"
+
+    
   @property
   def star_rating(self):
     return self._star_rating
@@ -125,7 +129,7 @@ class Review:
     if row:
         # Check if the row contains valid data
         if row[1] and row[2]:  # Assuming first name is at index 1 and last name is at index 2
-            return Customer(row[1], row[2])
+            return Customer(row[1], row[2], row[0])
         else:
             raise ValueError("Customer data retrieved from the database is invalid")
     else:
@@ -141,7 +145,7 @@ class Review:
     if row:
         # Check if the row contains valid data
         if row[1] and row[2]:  # Assuming first name is at index 1 and last name is at index 2
-            return Restaurant(row[1], row[2])
+            return Restaurant(row[1], row[2], row[0])
         else:
             raise ValueError("Restaurant data retrieved from the database is invalid")
     else:

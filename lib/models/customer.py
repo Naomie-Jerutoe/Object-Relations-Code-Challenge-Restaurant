@@ -9,6 +9,9 @@ class Customer:
     self.first_name = first_name
     self.last_name = last_name
   
+  def __repr__(self):
+    return f"Customer(id={self.id}, first_name='{self.first_name}', last_name='{self.last_name}')"
+  
   @property
   def first_name(self):
     return self._first_name 

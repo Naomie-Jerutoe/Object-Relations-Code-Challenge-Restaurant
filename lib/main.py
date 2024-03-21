@@ -65,6 +65,16 @@ def customer_methods_tests():
     print(display_name)
     print()
     
+    #display instance of customer reviews
+    print("*******Instance of Customer's Reviews of a restaurant********")
+    print(customer.customer_reviews())
+    print()
+    
+    #display restaurants that the customer reviewed
+    print("*******Restaurants reviewed by a Customer ********")
+    print(customer.customer_restaurants())
+    print()
+    
     #display customers favorite restaurant
     print("*******Customer's Favourite Restaurant********")
     favorite = customer.customer_favourite_restaurant()
@@ -88,6 +98,18 @@ def customer_methods_tests():
     # print()
 
 def restaurant_methods_tests():
+    #display instances of reviews
+    print("*******All instances of a restaurant reviews********")
+    rest = Restaurant.find_by_id(1)
+    print(rest.restaurant_reviews())
+    print()
+    
+    #display customers in a restaurant
+    print("*******All customers in a restaurant********")
+    cust = Restaurant.find_by_id(1)
+    print(cust.restaurant_customers())
+    print()
+    
     #display the fanciest restaurant
     print("*******Fanciest Restaurant********")
     fanciest_restaurant = Restaurant.restaurant_fanciest()
@@ -111,16 +133,24 @@ def restaurant_methods_tests():
     print()
 
 def review_methods_tests():
+    #display details of a customer review
+    print("*******Details of the Customer reviewing a restaurant********")
+    review = Review.find_by_id(1)
+    print(review.review_customer())
+    print()
+    
+    #display details of a restaurant review
+    print("*******Details of the Restaurant Reviewed********")
+    print(review.review_restaurant())
+    print()
+    
     #display full review of a restaurant
     print("*******Full Review of a Restaurant********")
-    review = Review.find_by_id(1)
     if review:
-        formatted_review = review.full_review()
-        print(formatted_review)
+        print(review.full_review())
     else:
         print("Review not found.")
     print()
-
 
 if __name__ == "__main__":
     main()
